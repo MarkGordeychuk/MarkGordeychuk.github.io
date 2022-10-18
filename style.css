@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #a4a4a4;
+    padding-top: calc(50vh - 147mm);
+}
+
+dialog::backdrop {
+    background-color: #0007;
+}
+
+.resume {
+    display: grid;
+    grid-template-columns: 230px calc(100% - 230px);
+    grid-template-rows: 150px auto;
+    margin: 0 auto;
+    max-width: 210mm;
+    min-height: 294mm;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 10mm;
+    box-shadow: #212121 0 0 60px 20px;
+}
+
+@media screen and (max-width: 210mm) and (min-width: 190mm){
+    .resume {
+        padding-left: calc(50% - 95mm);
+        padding-right: calc(50% - 95mm);
+    }
+}
+
+@media print {
+    .resume {
+        padding: 0;
+        box-shadow: none;
+    }
+}
+
+.name {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.left {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    background-color: #013848;
+    color: #9cadb5;
+    font-size: 12px;
+    /*border-right: 1px solid #013848;*/
+}
+
+.left a {
+    color: #5bb9e5;
+}
+
+.right {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.photo-btn {
+    display: none;
+    width: 100%;
+    height: 40px;
+    background-color: #013848;
+    color: #9cadb5;
+    cursor: pointer;
+    border: 1px solid #9cadb5;
+}
+
+.photo-btn:hover {
+    background-color: #9cadb5;
+    color: #013848;
+}
+
+@media screen and (max-width: 190mm) {
+    body {
+        padding: 0;
+    }
+
+    .resume {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        grid-template-columns: 100%;
+        min-width: 380px;
+    }
+
+    .left {
+        /*display: none;*/
+        grid-row: auto;
+    }
+
+    .name {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .right {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .photo-btn {
+        display: block;
+    }
+
+    .photo-hidden {
+        display: none;
+    }
+}
+
+.title {
+    font-size: 45px;
+}
+
+section {
+    margin: 10px;
+}
+
+section p {
+    text-align: justify;
+}
+
+.name, .right, .right a {
+    color: #013848;
+    text-decoration: none;
+}
+
+.name *, .right * {
+    border-color: #013848;
+}
+
+.right a:hover {
+    color: #9cadb5;
+    background-color: #013848;
+}
+
+.right a:hover * {
+    border-color: #9cadb5;
+}
+
+.right h2, .right h3 {
+    margin-top: 5px;
+}
+
+.photo {
+    margin: 0;
+}
+
+.contact-list {
+    padding-left: 20px;
+}
+
+.skillset {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+.skillset > li {
+    display: block;
+    margin: 3px;
+    border: 1px solid;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 1px;
+}
+
+/* Образование */
+
+.courses > li {
+    display: block;
+    margin: 5px 0;
+}
+
+.course-item {
+    display: block;
+}
+
+.course-info {
+    font-size: 12px;
+    font-style: italic;
+}
+
+.higher-education > li {
+    margin: 5px 0;
+    display: grid;
+    grid-template-columns: 40% calc(60% - 20px);
+    grid-column-gap: 20px;
+    justify-items: center;
+}
+
+.he-university {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
+    text-align: center;
+}
+
+.he-degree {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: 14px;
+    font-style: italic;
+    text-align: center;
+}
+
+.he-info {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    font-size: 14px;
+    text-align: justify;
+}
+
+
+/* Проекты */
+
+.projects-list > li {
+    display: block;
+    margin: 5px 0;
+}
+
+.project-card {
+    display: grid;
+    grid-template-columns: minmax(220px, 55%) 1fr;
+    grid-template-rows: repeat(2, auto);
+    justify-items: center;
+}
+
+.project-name {
+    grid-column: 1;
+    text-align: center;
+    align-self: end;
+}
+
+.project-skillset {
+    grid-column: 2;
+    grid-row: 1 / -1;
+}
+
+.project-skillset > li {
+    margin: 1px;
+}
+
+.project-link {
+    font-size: 10px;
+}
+
+/* Портфолио */
+
+.portfolio-list {
+    margin: 5px 0;
+    padding-left: 25px;
+    font-size: 12px;
+    text-align: justify;
+}
+
+.portfolio-item {
+    display: block;
+}
+
+/* Опыт работы */
+
+.experience-card {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr repeat(2, auto) 1fr;
+    justify-items: center;
+}
+
+.experience-job {
+    grid-column: 1;
+    align-self: end;
+    margin: 2px;
+    text-align: center;
+}
+
+.experience-place, .experience-time, .experience-link {
+    grid-column: 1;
+    font-size: 12px;
+    font-style: italic;
+    text-align: center;
+}
+
+.experience-list {
+    padding-left: 30px;
+    grid-column: 2;
+    grid-row: 1 / 5;
+    font-size: 13px;
+    text-align: justify;
+}
+
+.language-list {
+    margin-left: 30px;
+}
