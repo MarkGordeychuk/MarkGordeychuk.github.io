@@ -87,7 +87,7 @@ dialog::backdrop {
         padding: 0;
         width: 100%;
         grid-template-columns: 100%;
-        min-width: 380px;
+        grid-template-rows: auto auto;
     }
 
     .left {
@@ -116,6 +116,12 @@ dialog::backdrop {
 
 .title {
     font-size: 45px;
+}
+
+@media (max-width: 400px) {
+    .title {
+        font-size: 35px;
+    }
 }
 
 section {
