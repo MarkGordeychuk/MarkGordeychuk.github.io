@@ -8,10 +8,6 @@ body {
     padding-top: calc(50vh - 147mm);
 }
 
-dialog::backdrop {
-    background-color: #0007;
-}
-
 .resume {
     display: grid;
     grid-template-columns: 230px calc(100% - 230px);
@@ -55,6 +51,13 @@ dialog::backdrop {
 
 .left a {
     color: #5bb9e5;
+}
+
+@media print {
+    .left {
+        color: #013848;
+        background-color: white;
+    }
 }
 
 .right {
